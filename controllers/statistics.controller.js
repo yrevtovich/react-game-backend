@@ -15,6 +15,7 @@ const getStatistics = async (req, res) => {
 
 const postStatistics = async (req, res) => {
   try {
+    console.log(req.body)
     const stats = await Statistics
       .create(req.body)
       .then( async () => ({ message: 'Success.'}))
