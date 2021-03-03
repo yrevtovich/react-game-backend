@@ -1,4 +1,3 @@
-// import { Schema, model, Types, Document } from 'mongoose';
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const model = mongoose.model;
@@ -10,7 +9,5 @@ const StatisticsSchema = new Schema({
 }, {
   versionKey: false,
 });
-
-// export default model('Statistics', StatisticsSchema);
 
 module.exports = model('Statistics', StatisticsSchema);
