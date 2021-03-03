@@ -6,7 +6,6 @@ const statisticsDocumentsAmount = 10;
 const getStatistics = async (req, res) => {
   try {
     const stats = await Statistics.find({}).sort({ score: -1 });
-    console.log(stats);
     return res.status(200).json(stats);
   } catch (e) {
     return res.status(500).json({ message: 'Server error.' });
@@ -19,7 +18,7 @@ const postStatistics = async (req, res) => {
     const stats = await Statistics
       .create(req.body)
       .then(() => ({ message: 'Success.'}))
-      .catch((err) => res.status(400).json({ message: res.body}));
+      .catch((err) => res.status(400).json({ message: 'Incorrect request body.'}));
 
     const newStatsData = await Statistics.find({}).sort({ score: -1 });
 
