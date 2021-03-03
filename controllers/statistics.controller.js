@@ -18,8 +18,8 @@ const postStatistics = async (req, res) => {
     console.log(req.body)
     const stats = await Statistics
       .create(req.body)
-      .then( async () => ({ message: 'Success.'}))
-      .catch((err) => res.status(400).json({ message: 'Incorrect request body.', json: res.body}));
+      .then(() => ({ message: 'Success.'}))
+      .catch((err) => res.status(400).json({ message: res.body}));
 
     const newStatsData = await Statistics.find({}).sort({ score: -1 });
 
