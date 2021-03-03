@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use('/statistics', require('./routes/statistics'));
 
-const PORT = process.env.MONGODB_URI || 8000;
+const PORT = process.env.PORT || 8000;
 const mongoURI = 'mongodb+srv://yrevtovich:r8cswpdu@cluster0.aikah.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 
 async function start() {
