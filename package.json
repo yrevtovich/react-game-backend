@@ -1,0 +1,23 @@
+{
+  "name": "react-game-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yrevtovich/react-game-backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yrevtovich/react-game-backend/issues"
+  },
+  "homepage": "https://github.com/yrevtovich/react-game-backend#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.11.18"
+  }
+}
