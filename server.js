@@ -8,7 +8,7 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use('/statistics', require('./routes/statistics'));
 
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
 const mongoURI = 'mongodb+srv://yrevtovich:r8cswpdu@cluster0.aikah.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 
 async function start() {
@@ -16,12 +16,13 @@ async function start() {
     await mongoose.connect(mongoURI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
-      useCreateIndex: true
-    })
+      useCreateIndex: true,
+      useFindAndModify: false,
+    });
     app.listen(PORT, () => console.log(`App has been started on port ${PORT}...`))
   } catch (e) {
-    console.log('Server Error', e.message)
-    process.exit(1)
+    console.log('Server error', e.message);
+    process.exit(1);
   }
 }
 
